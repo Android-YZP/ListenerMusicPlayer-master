@@ -135,7 +135,7 @@ public class MainFragment extends Fragment {
     private void setupViewPager(ViewPager viewPager) {
         Adapter adapter = new Adapter(getChildFragmentManager());
         adapter.addFragment(SongsFragment.newInstance(action), this.getString(R.string.songs));
-        adapter.addFragment(ArtistFragment.newInstance(action), this.getString(R.string.artists));
+//        adapter.addFragment(ArtistFragment.newInstance(action), this.getString(R.string.artists));
         adapter.addFragment(AlbumFragment.newInstance(action), this.getString(R.string.albums));
         viewPager.setAdapter(adapter);
     }

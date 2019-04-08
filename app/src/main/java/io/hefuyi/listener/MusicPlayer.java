@@ -30,7 +30,7 @@ public class MusicPlayer {
     private static final long[] sEmptyList;
     public static IListenerService mService = null;
     private static ContentValues[] mContentValuesCache = null;
-
+//icon_singer_default ic_panel_back.png  fragment_playback_controls.xml  fragment_playback_controls.xml  fragment_album_detail.xml
     static {
         mConnectionMap = new WeakHashMap<Context, ServiceBinder>();
         sEmptyList = new long[0];
