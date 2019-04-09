@@ -16,6 +16,8 @@ import android.support.v4.app.FragmentManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.afollestad.appthemeengine.ATEActivity;
@@ -47,6 +49,11 @@ public class BaseActivity extends ATEActivity implements ServiceConnection {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //去除title
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //去掉Activity上面的状态栏
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         mToken = MusicPlayer.bindToService(this, this);
 

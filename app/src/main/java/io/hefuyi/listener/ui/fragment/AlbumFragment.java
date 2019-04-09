@@ -98,7 +98,7 @@ public class AlbumFragment extends Fragment implements AlbumsContract.View{
         mPreferences = PreferencesUtility.getInstance(getActivity());
         isGrid = mPreferences.isAlbumsInGrid();
         if (isGrid) {
-            layoutManager = new GridLayoutManager(getActivity(), 4);
+            layoutManager = new GridLayoutManager(getActivity(), 3);
         } else {
             layoutManager = new GridLayoutManager(getActivity(), 1);
         }

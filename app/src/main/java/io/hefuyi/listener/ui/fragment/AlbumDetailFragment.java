@@ -261,14 +261,14 @@ public class AlbumDetailFragment extends Fragment implements AlbumDetailContract
 
     @OnClick(R.id.fab_play)
     public void onFabPlayClick() {
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                AlbumSongsAdapter adapter = (AlbumSongsAdapter) recyclerView.getAdapter();
-                MusicPlayer.playAll(getActivity(), adapter.getSongIds(), 0, albumID, ListenerUtil.IdType.Album, false);
-            }
-        }, 150);
+//        Handler handler = new Handler();
+//        handler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                AlbumSongsAdapter adapter = (AlbumSongsAdapter) recyclerView.getAdapter();
+//                MusicPlayer.playAll(getActivity(), adapter.getSongIds(), 0, albumID, ListenerUtil.IdType.Album, false);
+//            }
+//        }, 150);
     }
 
     private void subscribeMetaChangedEvent() {

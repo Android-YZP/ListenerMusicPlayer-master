@@ -93,6 +93,8 @@ public class QuickControlsFragment extends Fragment implements QuickControlsCont
     PlayPauseView mPlayPauseView;
     @BindView(R.id.title)
     TextView mTitle;
+    @BindView(R.id.title2)
+    TextView mTitle2;
     @BindView(R.id.artist)
     TextView mArtist;
     @BindView(R.id.album_art)
@@ -250,9 +252,12 @@ public class QuickControlsFragment extends Fragment implements QuickControlsCont
         mSeekBar.setPadding(0, DensityUtil.dip2px(getContext(), 36), 0, 0);
         mSeekBar.setSecondaryProgress(mSeekBar.getMax());
 
-        songElapsedTime.setY((DensityUtil.getScreenWidth(getContext()) - songElapsedTime.getHeight()) / 2);
-
+        songElapsedTime.setY((DensityUtil.getScreenHeight(getContext()) - (songElapsedTime.getWidth()) * 2) / 3);
         setUpTimelyView();
+
+
+
+
         setSeekBarListener();
 
         if (mPlayPauseView != null) {
@@ -392,7 +397,6 @@ public class QuickControlsFragment extends Fragment implements QuickControlsCont
 
                 @Override
                 public void onStopTrackingTouch(SeekBar seekBar) {
-                    songElapsedTime.setVisibility(View.GONE);
                     MusicPlayer.seek((long) seekBar.getProgress());
                     mProgress.postDelayed(mUpdateProgress, 10);
                 }
@@ -446,6 +450,7 @@ public class QuickControlsFragment extends Fragment implements QuickControlsCont
     @Override
     public void setTitle(String title) {
         mTitle.setText(title);
+        mTitle2.setText(title);
     }
 
     @Override
@@ -461,6 +466,7 @@ public class QuickControlsFragment extends Fragment implements QuickControlsCont
             paletteColor = mSwatch.getRgb();
             int artistColor = mSwatch.getTitleTextColor();
             mTitle.setTextColor(ColorUtil.getOpaqueColor(artistColor));
+            mTitle2.setTextColor(ColorUtil.getOpaqueColor(artistColor));
             mArtist.setTextColor(artistColor);
         } else {
             mSwatch = palette.getMutedSwatch() == null ? palette.getVibrantSwatch() : palette.getMutedSwatch();
@@ -468,10 +474,12 @@ public class QuickControlsFragment extends Fragment implements QuickControlsCont
                 paletteColor = mSwatch.getRgb();
                 int artistColor = mSwatch.getTitleTextColor();
                 mTitle.setTextColor(ColorUtil.getOpaqueColor(artistColor));
+                mTitle2.setTextColor(ColorUtil.getOpaqueColor(artistColor));
                 mArtist.setTextColor(artistColor);
             } else {
                 paletteColor = ATEUtil.getThemeAlbumDefaultPaletteColor(getContext());
                 mTitle.setTextColor(getResources().getColor(android.R.color.primary_text_light));
+                mTitle2.setTextColor(getResources().getColor(android.R.color.primary_text_light));
                 mArtist.setTextColor(getResources().getColor(android.R.color.secondary_text_light));
             }
 

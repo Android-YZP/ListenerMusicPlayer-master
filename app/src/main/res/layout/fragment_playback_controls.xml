@@ -87,6 +87,7 @@
             android:text="@string/app_name"
             android:textSize="16sp" />
 
+
         <TextView
             android:id="@+id/artist"
             style="@style/TextAppearance.AppCompat.Widget.ActionMode.Subtitle"
@@ -185,8 +186,11 @@
         android:progressDrawable="@drawable/progressbar_color"
         android:minHeight="6dp"
         android:thumb="@null"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:progress="30"
-        android:paddingTop="24dp"
+        android:layout_marginBottom="20dp"
+        android:paddingTop="34dp"
         android:clickable="true"
      />
 
